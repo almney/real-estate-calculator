@@ -1,675 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
+    <meta name="google-site-verification" content="XjEYS_eOqc2Cz8yp6LO-jmoWnkF2CQNkXBdyf2EX71s" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYYB09GE7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYYB09GE7R');
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oday-ismail | AI Data Specialist & Web Automation Developer</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>حاسبة التمويل العقاري وعائد الاستثمار (ROI) | أداة مجانية سريعة</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="حاسبة التمويل العقاري وعائد الاستثمار السنوي الصافي (ROI). احسب القسط الشهري، الدفعة الأولى، وعوائد الإيجار بدقة وبدون تسجيل.">
+    <meta name="keywords" content="حاسبة التمويل العقاري, حاسبة عائد الاستثمار العقاري, حساب ROI العقار, حاسبة القسط الشهري للعقار, حساب صافي الدخل الإيجاري, حاسبة العقارات السعودية">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/real-estate-calculator">
+
+    <!-- Open Graph (Social Media Sharing) -->
+    <meta property="og:title" content="حاسبة التمويل العقاري وعائد الاستثمار الصافي">
+    <meta property="og:description" content="احسب القسط الشهري وعائد استثمارك العقاري بدقة وبضغطة زر.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/real-estate-calculator">
+
+    <!-- Structured Data (Schema.org for Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "حاسبة التمويل العقاري وعائد الاستثمار",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SAR"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "كيف يتم حساب عائد الاستثمار العقاري الصافي (ROI)؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "يتم خصم مصاريف الصيانة والخدمات السنوية من إجمالي الإيجار السنوي، ثم قسمة الناتج على القيمة الإجمالية للشراء وتنسيق الناتج كنسبة مئوية."
+        }
+      },{
+        "@type": "Question",
+        "name": "هل تشمل الحاسبة أرباح المرابحة البنكية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، تعتمد الحاسبة صيغة الرياضية المركبة للتمويل لحساب القسط الشهري بناءً على نسبة المرابحة ومدة السداد بالسنوات."
+        }
+      }]
+    }
+    </script>
+
     <style>
-        /* --- Root Variables & Theme Setup --- */
         :root {
-            --bg-color: #0b0f19;
-            --surface-color: #111827;
-            --surface-hover: #1f2937;
-            --border-color: #1f2937;
-            --border-light: #374151;
-            --primary-accent: #3b82f6;
-            --primary-hover: #2563eb;
-            --secondary-accent: #10b981;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-            --font-code: 'Fira Code', monospace;
-            --max-width: 1200px;
+            --primary: #0f766e;
+            --primary-hover: #0d9488;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --accent: #16a34a;
         }
 
-        /* --- Global Reset & Base Styles --- */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-main);
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px 15px;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
         }
 
         .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.5rem;
-            width: 40px;
-            height: 3px;
-            background-color: var(--primary-accent);
-            border-radius: 2px;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 4.5rem;
-        }
-
-        .logo {
-            font-family: var(--font-code);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-accent);
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--text-main);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-accent);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: 8rem 0 6rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero-badge {
-            font-family: var(--font-code);
-            font-size: 0.875rem;
-            color: var(--secondary-accent);
-            background-color: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            line-height: 1.2;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
             max-width: 850px;
+            margin: 0 auto;
         }
 
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 680px;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--primary-accent);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 0.85rem 1.75rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        /* --- Skills Section --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 1.75rem;
-            border-radius: 0.75rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            background-color: rgba(59, 130, 246, 0.1);
-            color: var(--primary-accent);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            padding: 0.25rem 0.6rem;
-            border-radius: 0.25rem;
-        }
-
-        /* --- Projects Section --- */
-        .projects-header {
-            margin-bottom: 2rem;
-        }
-
-        .projects-header h3 {
-            font-size: 1.35rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .project-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .project-card:hover {
-            border-color: var(--border-light);
-            transform: translateY(-3px);
-        }
-
-        .project-content h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .project-tech {
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--primary-accent);
-            font-weight: 500;
-        }
-
-        .btn-link:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Featured Blog Section --- */
-        .blog-featured-card {
-            background: linear-gradient(135deg, var(--surface-color) 0%, rgba(17, 24, 39, 0.6) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .blog-info h3 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-domain {
-            font-family: var(--font-code);
-            color: var(--secondary-accent);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .blog-info p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            max-width: 650px;
-        }
-
-        .blog-stats {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* --- Contact / Footer --- */
-        footer {
-            padding: 4rem 0;
-            background-color: var(--bg-color);
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        header {
             text-align: center;
-            gap: 1.5rem;
+            margin-bottom: 25px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 2rem;
+        header h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
 
-        .footer-links a {
-            color: var(--text-muted);
+        header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .calculator-card {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
             font-size: 1rem;
-            transition: color 0.2s ease;
+            outline: none;
+            transition: border-color 0.2s;
         }
 
-        .footer-links a:hover {
-            color: var(--primary-accent);
+        .form-group input:focus {
+            border-color: var(--primary);
         }
 
-        .copyright {
-            font-size: 0.875rem;
-            color: var(--text-muted);
+        .results-box {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border-right: 4px solid var(--primary);
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.15rem;
-            }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
 
-            .hero-tagline {
-                font-size: 1.05rem;
-            }
+        .result-item {
+            background: #fff;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
 
-            .blog-featured-card {
-                grid-template-columns: 1fr;
-            }
+        .result-item span {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
 
-            .nav-links {
-                gap: 1rem;
-            }
+        .result-item strong {
+            font-size: 1.15rem;
+            color: var(--text);
+        }
 
-            .nav-links a {
-                font-size: 0.85rem;
-            }
+        .result-item.highlight strong {
+            color: var(--accent);
+        }
+
+        .ad-banner {
+            margin-top: 20px;
+            background-color: #f0fdf4;
+            border: 1px dashed var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .ad-banner a {
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* SEO Content Section */
+        .seo-content {
+            margin-top: 40px;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .seo-content h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .seo-content h2:first-child { margin-top: 0; }
+
+        .seo-content p {
+            font-size: 0.92rem;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: var(--muted);
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. Header / Navigation -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">oday-ismail<span>.dev</span></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>حاسبة التمويل العقاري وعائد الاستثمار (ROI)</h1>
+            <p>أداة مجانية لحساب القسط الشهري، صافي أرباح الإيجار، ونسبة العائد الاستثماري بدقة</p>
+        </header>
 
-    <main class="container">
-        <!-- 2. Hero Section -->
-        <section id="about" class="hero">
-            <span class="hero-badge">Available for Automation & Data Projects</span>
-            <h1 class="hero-title">AI Data Specialist & Web Automation Developer</h1>
-            <p class="hero-tagline">
-                Specializing in robust Python automation, AI model data evaluation, precise prompt engineering, and modern front-end application architectures.
-            </p>
-            <a href="#projects" class="cta-button">
-                View Projects <span>&rarr;</span>
-            </a>
-        </section>
-
-        <!-- 3. Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-card">
-                    <h3>Python Automation</h3>
-                    <div class="tag-container">
-                        <span class="tag">Python 3</span>
-                        <span class="tag">Web Scraping</span>
-                        <span class="tag">API Integration</span>
-                        <span class="tag">Media Scripting</span>
-                        <span class="tag">Task Scheduling</span>
+        <main class="calculator-card">
+            <div class="grid-2">
+                <div>
+                    <div class="form-group">
+                        <label for="propertyPrice">سعر العقار الإجمالي (ريال / درهم)</label>
+                        <input type="number" id="propertyPrice" value="1000000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label for="downPaymentPercent">الدفعة الأولى (%)</label>
+                        <input type="number" id="downPaymentPercent" value="10" min="0" max="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label for="interestRate">نسبة المرابحة / الفائدة السنوية (%)</label>
+                        <input type="number" id="interestRate" value="4.5" step="0.1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanYears">مدة التمويل (بالسنوات)</label>
+                        <input type="number" id="loanYears" value="20" oninput="calculate()">
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>AI & Data Annotation</h3>
-                    <div class="tag-container">
-                        <span class="tag">Model Evaluation</span>
-                        <span class="tag">Data Annotation</span>
-                        <span class="tag">Prompt Engineering</span>
-                        <span class="tag">Dataset Curation</span>
-                        <span class="tag">RLHF</span>
+                <div>
+                    <div class="form-group">
+                        <label for="annualRent">الإيجار السنوي المتوقع (في حال الاستثمار)</label>
+                        <input type="number" id="annualRent" value="80000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label for="annualMaintenance">المصاريف والصيانة السنوية المتوقعة</label>
+                        <input type="number" id="annualMaintenance" value="5000" oninput="calculate()">
                     </div>
                 </div>
-
-                <div class="skill-card">
-                    <h3>Front-End Development</h3>
-                    <div class="tag-container">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3 (Grid/Flex)</span>
-                        <span class="tag">JavaScript (ES6+)</span>
-                        <span class="tag">UI/UX Dashboards</span>
-                        <span class="tag">Responsive Layouts</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <h3>SEO & Content Strategy</h3>
-                    <div class="tag-container">
-                        <span class="tag">On-Page SEO</span>
-                        <span class="tag">Structured Data</span>
-                        <span class="tag">Site Architecture</span>
-                        <span class="tag">Technical Writing</span>
-                        <span class="tag">Content Management</span>
-                    </div>
-                </div>
-
             </div>
-        </section>
 
-        
-        <!-- 4. Projects Section -->
-        <section id="projects">
-            <h2 class="section-title">Featured Projects</h2>
-
-            <!-- Web Utility Tools Grid -->
-            <div class="projects-header">
-                <h3>Web Utility Tools</h3>
+            <div class="results-box">
+                <h2>نتائج الحسابات المالية:</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span>قيمة التمويل المطلوب</span>
+                        <strong id="loanAmount">0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>القسط الشهري المتوقع</span>
+                        <strong id="monthlyPayment">0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>صافي الدخل الإيجاري السنوي</span>
+                        <strong id="netRentalIncome">0</strong>
+                    </div>
+                    <div class="result-item highlight">
+                        <span>عائد الاستثمار السنوي (ROI)</span>
+                        <strong id="roiPercent">0%</strong>
+                    </div>
+                </div>
             </div>
-            <div class="portfolio-grid">
-                
-                <div class="project-card">
-    <div class="project-content">
-        <h4>Arabic Fitness & Health Calculator</h4>
-        <p>An interactive Arabic fitness utility designed to calculate daily caloric needs, BMI, and nutritional targets easily.</p>
-        <div class="project-tech tag-container">
-            <span class="tag">JavaScript</span>
-            <span class="tag">HealthTech</span>
-            <span class="tag">HTML5</span>
-        </div>
+
+            <div class="ad-banner">
+                💡 هل تريد المقارنة بين أفضل عروض التمويل؟ <a href="#" target="_blank" rel="nofollow">احصل على استشارة تمويل عقاري مجاناً</a>
+            </div>
+        </main>
+
+        <!-- SEO Article & FAQ Section -->
+        <article class="seo-content">
+            <h2>دليل حساب التمويل العقاري وعائد الاستثمار</h2>
+            <p>عند الشروع في الاستثمار العقاري أو شراء منزل العمر، يُعد فهم <strong>طريقة حساب القسط الشهري</strong> و<strong>عائد الاستثمار الصافي (ROI)</strong> خطوة أساسية لضمان عدم تجاوز الالتزامات الماليّة لمدخولك الشهري. تتيح لك هذه الحاسبة العقارية إجراء عملية تحليل مالية كاملة في ثوانٍ دون الحاجة لتسجيل أو إدخال بيانات شخصية.</p>
+
+            <h2>كيفية حساب صافي عائد الاستثمار العقاري (ROI)</h2>
+            <p>عائد الاستثمار (Return on Investment) هو النسبية المئوية التي توضح أرباح العقار الإيجارية مقارنة بقيمته الإجمالية. يتم احتسابه معادلة بسيطة: خصم مصاريف التشغيل والصيانة السنوية من إجمالي الإيجار، ثم قسمة الناتج على سعر شراء العقار الإجمالي.</p>
+
+            <h2>الأسئلة الشائعة (FAQ)</h2>
+            <div class="faq-item">
+                <h3>1. ما هي الدفعة الأولى المناسبة للتمويل العقاري؟</h3>
+                <p>تختلف النسبة حسب قوانين البنوك والأنظمة العقارية، ولكن غالباً ما تتراوح بين 10% إلى 20% من إجمالي قيمة العقار للشراء الأول.</p>
+            </div>
+            <div class="faq-item">
+                <h3>2. ما الفرق بين العائد الإجمالي والعائد الصافي؟</h3>
+                <p>العائد الإجمالي يقيس نسبة الإيجار بالنسبة لسعر العقار فقط، بينما <strong>العائد الصافي (Net ROI)</strong> يخصم التكاليف الفرعية مثل الرسوم الحكومية، رسوم إدارة الأملاك، ومصاريف الصيانة السنوية، وهو المؤشر الأدق للربحية.</p>
+            </div>
+        </article>
+
+        <footer>
+            <p>© 2026 حاسبة التمويل والعائد العقاري - جميع الحقوق محفوظة.</p>
+        </footer>
     </div>
-    <a href="https://almney.github.io/fitness-calculator-AR/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-</div>
 
-               <div class="project-card">
-    <div class="project-content">
-        <h4>Arabic Real Estate Calculator</h4>
-        <p>A specialized Arabic real estate utility designed to compute property financing, mortgage installments, and investment returns.</p>
-        <div class="project-tech tag-container">
-            <span class="tag">JavaScript</span>
-            <span class="tag">FinTech</span>
-            <span class="tag">HTML5</span>
-        </div>
-    </div>
-    <a href="https://almney.github.io/real-estate-calculator/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-</div>
+    <script>
+        function calculate() {
+            const price = parseFloat(document.getElementById('propertyPrice').value) || 0;
+            const downPercent = parseFloat(document.getElementById('downPaymentPercent').value) || 0;
+            const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const years = parseFloat(document.getElementById('loanYears').value) || 0;
+            const rent = parseFloat(document.getElementById('annualRent').value) || 0;
+            const maintenance = parseFloat(document.getElementById('annualMaintenance').value) || 0;
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Canada Savings Calculator</h4>
-                        <p>A web utility designed to project long-term financial growth and savings estimation tailored for Canadian accounts.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/canada-savings-calc/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
+            const downPayment = price * (downPercent / 100);
+            const loanAmount = price - downPayment;
+            
+            const monthlyInterest = (interestRate / 100) / 12;
+            const numberOfPayments = years * 12;
+            
+            let monthlyPayment = 0;
+            if (monthlyInterest > 0 && numberOfPayments > 0) {
+                monthlyPayment = (loanAmount * monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)) / 
+                                 (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+            } else if (numberOfPayments > 0) {
+                monthlyPayment = loanAmount / numberOfPayments;
+            }
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Calcolatore Stipendio Netto</h4>
-                        <p>An Italian net salary calculator tool that accurately computes post-tax take-home pay and tax bracket breakdowns.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">FinTech</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/calcolatore-stipendio-netto/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
+            const netRent = rent - maintenance;
+            const roi = price > 0 ? (netRent / price) * 100 : 0;
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Italy Electricity Cost Calculator</h4>
-                        <p>An interactive utility to estimate monthly energy consumption costs and appliance power usage rates in Italy.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">HTML5</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/Italy-Electricity-Cost-Calculator/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
+            const formatCurr = (val) => Math.round(val).toLocaleString('ar-SA');
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>India In-Hand Salary Calculator</h4>
-                        <p>A fast web application to calculate net salary after provident fund (PF) and income tax deductions under Indian tax slabs.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">CSS Grid</span>
-                            <span class="tag">FinTech</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/india-in-hand-salary-calculator/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
+            document.getElementById('loanAmount').innerText = formatCurr(loanAmount);
+            document.getElementById('monthlyPayment').innerText = formatCurr(monthlyPayment);
+            document.getElementById('netRentalIncome').innerText = formatCurr(netRent);
+            document.getElementById('roiPercent').innerText = roi.toFixed(2) + '%';
+        }
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>UK TDEE Calculator</h4>
-                        <p>A health-tech web tool calculating Total Daily Energy Expenditure (TDEE) and target caloric intake for UK users.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HealthTech</span>
-                            <span class="tag">CSS3</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/uk-tdee-calculator/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Schnell Netto Rechner</h4>
-                        <p>A clean, lightweight German net income calculator for fast tax estimation and social security deductions.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML5</span>
-                            <span class="tag">FinTech</span>
-                        </div>
-                    </div>
-                    <a href="https://almney.github.io/schnell-netto-rechner/" class="btn-link" target="_blank" rel="noopener">View Tool &rarr;</a>
-                </div>
-
-            </div>
-
-            <!-- Front-End Business Systems Grid -->
-            <div class="projects-header">
-                <h3>Front-End Business Systems</h3>
-            </div>
-            <div class="portfolio-grid">
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Services Management Dashboard</h4>
-                        <p>Responsive admin dashboard tailored for managing appointments, customer queues, and operational analytics.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS Flexbox/Grid</span>
-                            <span class="tag">JS</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn-link">Live Preview &rarr;</a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h4>Restaurant POS Interface</h4>
-                        <p>Touch-friendly digital ordering interface featuring quick category toggles and cart recalculation.</p>
-                        <div class="project-tech tag-container">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">CSS3</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn-link">Live Preview &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 5. Featured Blog Section -->
-        <section id="blog">
-            <h2 class="section-title">Featured Content Project</h2>
-            <div class="blog-featured-card">
-                <div class="blog-info">
-                    <h3>Roots & Feathers</h3>
-                    <span class="blog-domain">English Niche Publication</span>
-                    <p>
-                        A digital publication focused on agricultural guides, DIY techniques, and homesteading workflows. Built with a focus on semantic site structure, layout optimization, fast page load speeds, and strict SEO compliance.
-                    </p>
-                    <a href="https://rootsandfeatherslife.blogspot.com/" class="cta-button" style="padding: 0.65rem 1.25rem; font-size: 0.9rem;">
-                        Visit Publication &rarr;
-                    </a>
-                </div>
-                <div class="blog-stats">
-                    <div class="stat-item">
-                        <span class="stat-value">40+</span>
-                        <span class="stat-label">Structured Articles</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">100%</span>
-                        <span class="stat-label">SEO & Responsive Design</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 6. Footer -->
-    <footer id="contact">
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://linkedin.com/in/oday-ismail" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="oday.m.ismail@gmail.com">Email</a>
-            </div>
-            <p class="copyright">&copy; 2026 oday-ismail. All rights reserved.</p>
-        </div>
-    </footer>
-
+        calculate();
+    </script>
 </body>
 </html>
